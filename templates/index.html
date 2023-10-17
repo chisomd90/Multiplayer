@@ -12,6 +12,9 @@
     <script>
         var socket = io.connect('http://' + document.domain + ':' + location.port);
 
+        var player_id = "unique_player_id";  // Replace with the actual player ID
+        var game_id = "unique_game_id";      // Replace with the actual game ID
+
         socket.on('message', function(data) {
             var message = document.createElement('div');
             message.innerHTML = data;
@@ -20,6 +23,17 @@
 
         // Handle player movements, ball movements, etc.
         // Send data to the server using socket.emit('move', data);
+
+        // Example of sending player movements with game_id
+        function sendPlayerMovement(x, y) {
+            var moveData = {
+                player_id: player_id,
+                game_id: game_id,
+                x: x,
+                y: y
+            };
+            socket.emit('move', moveData);
+        }
 
         // Listen for game updates
         socket.on('game_update', function(data) {
