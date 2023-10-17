@@ -17,3 +17,5 @@ simple-websocket==1.0.0
 six==1.16.0
 Werkzeug==3.0.0
 wsproto==1.2.0
+requests==2.26.0
+waitress==2.26.0
