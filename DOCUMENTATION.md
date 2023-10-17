@@ -33,6 +33,7 @@ Before you begin, ensure you have met the following requirements:
    ```bash
    git clone https://github.com/chisomd90/Game-API.git
    cd your-repo
+```
 
 2. Create and activate a virtual environment:
 
