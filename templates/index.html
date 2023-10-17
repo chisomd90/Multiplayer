@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>My Game</title>
+</head>
+<body>
+    <h1>My Game</h1>
+    <div id="messages"></div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.0.1/socket.io.js"></script>
+    <script>
+        var socket = io.connect('http://' + document.domain + ':' + location.port);
+
+        socket.on('message', function(data) {
+            var message = document.createElement('div');
+            message.innerHTML = data;
+            document.getElementById('messages').appendChild(message);
+        });
+
+        // Handle player movements, ball movements, etc.
+        // Send data to the server using socket.emit('move', data);
+
+        // Listen for game updates
+        socket.on('game_update', function(data) {
+            // Update the game state based on the data received
+        });
+    </script>
+</body>
+</html>
